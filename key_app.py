@@ -1,54 +1,85 @@
-from tkinter import Tk, filedialog, StringVar, Entry, Button
+from tkinter import Tk, filedialog, StringVar, Entry, Button, simpledialog
 from Crypto.PublicKey import RSA
-
-global pin 
-
-global file_path
-
-root = Tk()
-root.title('RSA')
-
-root.geometry("300x200")
-
-pin_var = StringVar()
+from Crypto.Hash import SHA256
+from Crypto.Cipher import AES
+import os
 
 
-def submit():
+class KeyApp:
+    def __init__(self, root):
+        self.pin_var = StringVar()
+        self.file_path = "./"
+        self.root = root
 
-    key_pair = RSA.generate(4096)
+        # GUI Elements
+        pin_entry = Entry(
+            root, textvariable=self.pin_var, font=("calibre", 10, "normal"), show="*"
+        )
+        browse_button = Button(root, text="Browse", command=self.choose_location)
+        sub_btn = Button(root, text="Submit", command=self.submit)
 
-    pin=pin_var.get()
-    public_key = key_pair.publickey().exportKey()
-    private_key = key_pair.exportKey()
+        pin_entry.grid(row=2, column=2)
+        browse_button.grid(row=3, column=2)
+        sub_btn.grid(row=5, column=3)
 
-    print("The pin is : " + pin)
-    print(public_key)
-    print(private_key)
+    def generate_rsa_key(self):
+        return RSA.generate(4096)
 
-    with open ("./public.pem", "w") as pub_file:
-        print("{}".format(public_key), file=pub_file)
-    pin_var.set("")
+    def derive_aes_key(self, pin):
+        hasher = SHA256.new(pin.encode())
+        return hasher.digest()
 
+    def submit(self):
+        pin = self.pin_var.get().strip()
+        if not pin:
+            print("PIN cannot be empty!")
+            return
+        elif pin.len() < 4:
+            print("PIN is too short!")
+            return
+        key_pair = self.generate_rsa_key()
+        aes_key = self.derive_aes_key(pin)
 
-def browse_file():
-    initial_dir = './'
-    file_path = filedialog.askopenfilename(initialdir=initial_dir, title="Select a file to save key")
+        # Encrypt private key
+        self.encrypt_private_key(key_pair.export_key(), aes_key, self.file_path)
 
+        # Save public key
+        pub_key_path = self.file_path.replace(".pem", "_pub.pem")
+        self.save_public_key(key_pair.publickey(), pub_key_path)
 
+        self.pin_var.set("")  # Clear PIN field
 
-# window elemensts
-pin_entry=Entry(root, textvariable = pin_var, font = ('calibre',10,'normal'), show = '*')
+    def encrypt_private_key(self, private_key, aes_key, output_file):
+        iv = os.urandom(16)
+        cipher_aes = AES.new(aes_key, AES.MODE_CBC, iv)
 
-browse_button = Button(root, text="Browse", command=browse_file)
+        padding_length = 16 - (len(private_key) % 16)
+        private_key_padded = private_key + bytes([padding_length]) * padding_length
 
-sub_btn=Button(root, text = 'Submit', command = submit)
+        encrypted_data = cipher_aes.encrypt(private_key_padded)
 
+        with open(output_file, "wb") as f:
+            f.write(iv + encrypted_data)
 
-# placing window elemensts
+        print(f"Encrypted private key saved to {output_file}")
 
-pin_entry.grid(row=2,column=2)
-sub_btn.grid(row=3,column=2)
-browse_button.grid(row=5,column=2)
+    def save_public_key(self, public_key, output_file):
+        with open(output_file, "wb") as f:
+            f.write(public_key.export_key(format="PEM"))
+        print(f"Public key saved to {output_file}")
 
-# window display
-root.mainloop()
+    def choose_location(self):
+        save_path = filedialog.asksaveasfilename(defaultextension=".pem", filetypes=[("Privacy-Enhanced Mail", "*.pem")])
+        if not save_path:
+            print("No file selected.")
+            return
+        print(f"File selected: {save_path}")
+        self.file_path = save_path
+        
+if __name__ == "__main__":
+    root = Tk()
+    root.title("RSA Key Generator")
+    root.geometry("300x200")
+
+    KeyApp(root)
+    root.mainloop()
