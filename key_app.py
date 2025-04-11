@@ -3,8 +3,9 @@ from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
 from Crypto.Cipher import AES
 import os
+import logging
 
-
+logging.basicConfig(level=logging.DEBUG)
 class KeyApp:
     def __init__(self, root):
         self.pin_var = StringVar()
@@ -32,22 +33,23 @@ class KeyApp:
     def submit(self):
         pin = self.pin_var.get().strip()
         if not pin:
-            print("PIN cannot be empty!")
+            logging.debug("PIN cannot be empty!")
             return
-        elif pin.len() < 4:
-            print("PIN is too short!")
+        elif len(pin) < 4:
+            logging.debug("PIN is too short!")
             return
         key_pair = self.generate_rsa_key()
         aes_key = self.derive_aes_key(pin)
 
-        # Encrypt private key
         self.encrypt_private_key(key_pair.export_key(), aes_key, self.file_path)
+        logging.debug(f'Private key: {key_pair.export_key()}')
+        logging.debug(f'Public key: {key_pair.publickey().export_key()}')
 
-        # Save public key
+
         pub_key_path = self.file_path.replace(".pem", "_pub.pem")
         self.save_public_key(key_pair.publickey(), pub_key_path)
 
-        self.pin_var.set("")  # Clear PIN field
+        self.pin_var.set("")
 
     def encrypt_private_key(self, private_key, aes_key, output_file):
         iv = os.urandom(16)
@@ -61,19 +63,19 @@ class KeyApp:
         with open(output_file, "wb") as f:
             f.write(iv + encrypted_data)
 
-        print(f"Encrypted private key saved to {output_file}")
+        logging.debug(f"Encrypted private key saved to {output_file}")
 
     def save_public_key(self, public_key, output_file):
         with open(output_file, "wb") as f:
             f.write(public_key.export_key(format="PEM"))
-        print(f"Public key saved to {output_file}")
+        logging.debug(f"Public key saved to {output_file}")
 
     def choose_location(self):
         save_path = filedialog.asksaveasfilename(defaultextension=".pem", filetypes=[("Privacy-Enhanced Mail", "*.pem")])
         if not save_path:
-            print("No file selected.")
+            logging.debug("No file selected.")
             return
-        print(f"File selected: {save_path}")
+        logging.debug(f"File selected: {save_path}")
         self.file_path = save_path
         
 if __name__ == "__main__":
