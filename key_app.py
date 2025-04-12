@@ -21,7 +21,7 @@ class KeyApp:
 
         pin_entry.grid(row=2, column=2)
         browse_button.grid(row=3, column=2)
-        sub_btn.grid(row=5, column=3)
+        sub_btn.grid(row=5, column=2)
 
     def generate_rsa_key(self):
         return RSA.generate(4096)
