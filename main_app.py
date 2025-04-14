@@ -121,7 +121,9 @@ class encryption_app:
             
         
         self.private_key = self.load_and_decrypt_private_key(self.key_path, pin)
-        logging.debug(f'Private key: {self.private_key}')            
+        logging.debug(f'Private key: {self.private_key}') 
+        if self.private_key is None:
+            return           
         self.pin_var.set("") 
         self.message.set('Key ready!')
 
@@ -176,7 +178,14 @@ class encryption_app:
         return private_key
 
     def load_and_decrypt_private_key(self, file_path, pin):
+        logging.debug('load_and_decrypt_private_key')            
+
         aes_key = self.derive_aes_key(pin)
+
+        if file_path is None:
+            logging.debug("No key path")
+            return
+
 
         with open(file_path, "rb") as f:
             encrypted_data = f.read()
