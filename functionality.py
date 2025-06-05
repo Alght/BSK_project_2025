@@ -265,12 +265,17 @@ def verify_pdf(pdf_file_path, public_key):
                 return False
             
             # validate signature
-            embedded_sig = reader.embedded_signatures[0]
-            validation_result = validate_pdf_signature(embedded_sig)
-            if not (validation_result.intact and validation_result.valid):
-                logging.debug("Signature failed cryptographic validation.")
-                return False
-            
+            try:
+                embedded_sig = reader.embedded_signatures[0]
+                validation_result = validate_pdf_signature(embedded_sig)
+                if not (validation_result.intact and validation_result.valid):
+                    logging.debug("Signature failed cryptographic validation.")
+                    return False
+            except Exception as e:
+                    logging.debug("Signature failed cryptographic validation.")
+                    return False
+
+
 
             # get key from certificate
             signer_cert = embedded_sig.signer_cert

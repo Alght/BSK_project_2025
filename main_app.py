@@ -315,7 +315,7 @@ class EncryptionApp:
                 logging.debug(f"Public key imported successfully: {self.public_key}")
                 self.message_public_key.set(f"Public key: {file_path.split('/')[-1]}")
         except (ValueError, IndexError, TypeError) as e:
-            logging.error(f"Failed to import public key: {e}")
+            logging.warning(f"Failed to import public key: {e}")
             self.public_key = None
             self.message_public_key.set("Wrong public key format")
 
