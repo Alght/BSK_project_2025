@@ -1,0 +1,286 @@
+\doxysection{functionality Namespace Reference}
+\hypertarget{namespacefunctionality}{}\label{namespacefunctionality}\index{functionality@{functionality}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefunctionality_a484f43f22fe550fcdb76686f6ac78d3f}{generate\+\_\+rsa\+\_\+key}} ()
+\item 
+\mbox{\hyperlink{namespacefunctionality_ab63d69072dde1ba709216176432b12a2}{derive\+\_\+aes\+\_\+key}} (pin)
+\item 
+\mbox{\hyperlink{namespacefunctionality_a3d114e05619d61fc17864255f30a3621}{encrypt\+\_\+private\+\_\+key}} (private\+\_\+key, aes\+\_\+key)
+\item 
+\mbox{\hyperlink{namespacefunctionality_a77df7485065ae857faa69528d747f953}{decrypt\+\_\+private\+\_\+key}} (encrypted\+\_\+data, aes\+\_\+key)
+\item 
+\mbox{\hyperlink{namespacefunctionality_ae6531eefcaa9bb444d53f751e90ee51e}{create\+\_\+keys}} (pin, file\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacefunctionality_ab69adcb8bcfa1e53173267c7d60361c8}{save\+\_\+public\+\_\+key}} (public\+\_\+key, output\+\_\+file)
+\item 
+\mbox{\hyperlink{namespacefunctionality_a9b4a02e154722920309b635dded95381}{save\+\_\+encrypted\+\_\+privat\+\_\+key}} (encrypted\+\_\+privat\+\_\+key, output\+\_\+file)
+\item 
+\mbox{\hyperlink{namespacefunctionality_adc94e58267a43d79d7070c92d48a858d}{prepare\+\_\+public\+\_\+key}} (file\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacefunctionality_ad9c228d18da80a90a4befdfd2a967315}{load\+\_\+and\+\_\+decrypt\+\_\+private\+\_\+key}} (file\+\_\+path, pin)
+\item 
+\mbox{\hyperlink{namespacefunctionality_aee915e12008f5adbf00c3f4412691d07}{verify\+\_\+pdf}} (pdf\+\_\+file\+\_\+path, public\+\_\+key)
+\item 
+\mbox{\hyperlink{namespacefunctionality_a7a93ccc5c016802e6658f6c66377157e}{create\+\_\+cert}} (private\+\_\+key, save=False)
+\item 
+\mbox{\hyperlink{namespacefunctionality_a1a519b61539d672fec01dd521eb369b5}{sign\+\_\+pdf}} (pdf\+\_\+file\+\_\+path, cert, key, change\+\_\+name=False)
+\item 
+\mbox{\hyperlink{namespacefunctionality_ad18951c3b5c0dd555a3e18bdf4fab929}{sign\+\_\+pdf\+\_\+full}} (pdf\+\_\+file\+\_\+path, key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefunctionality_a510ff7ae6d0e44e0a7a6cd42205535c7}{level}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefunctionality_a7a93ccc5c016802e6658f6c66377157e}\index{functionality@{functionality}!create\_cert@{create\_cert}}
+\index{create\_cert@{create\_cert}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{create\_cert()}{create\_cert()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a7a93ccc5c016802e6658f6c66377157e} 
+functionality.\+create\+\_\+cert (\begin{DoxyParamCaption}\item[{}]{private\+\_\+key}{, }\item[{}]{save}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a self-signed X.509 certificate using the provided RSA private key.
+
+Parameters:
+    private_key (rsa.RSAPrivateKey): The private key to sign the certificate.
+    save (bool): If True, saves the certificate to a file named 'rsa_cert.pem'.
+
+Returns:
+    x509.Certificate: A self-signed X.509 certificate.
+
+Side Effects:
+    - Optionally writes the certificate to 'rsa_cert.pem'.
+    - Logs debug messages including key types and certificate creation steps.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_ae6531eefcaa9bb444d53f751e90ee51e}\index{functionality@{functionality}!create\_keys@{create\_keys}}
+\index{create\_keys@{create\_keys}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{create\_keys()}{create\_keys()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_ae6531eefcaa9bb444d53f751e90ee51e} 
+functionality.\+create\+\_\+keys (\begin{DoxyParamCaption}\item[{}]{pin}{, }\item[{}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate RSA key pair, derive AES key from PIN, encrypt the private key, and save both keys to files.
+
+Parameters:
+    pin (str): User-provided PIN used to derive the AES key.
+    file_path (str): Path where the encrypted private key will be saved (PEM format).
+
+Side Effects:
+    - Saves the encrypted private key to `file_path`.
+    - Saves the public key to `file_path` with `_pub.pem` suffix.
+    - Logs debug messages about the operation.
+    - Logs errors if key creation or file operations fail.
+
+Returns:
+    None
+
+Raises:
+    Logs exceptions internally but does not propagate them.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_a77df7485065ae857faa69528d747f953}\index{functionality@{functionality}!decrypt\_private\_key@{decrypt\_private\_key}}
+\index{decrypt\_private\_key@{decrypt\_private\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{decrypt\_private\_key()}{decrypt\_private\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a77df7485065ae857faa69528d747f953} 
+functionality.\+decrypt\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{}]{encrypted\+\_\+data}{, }\item[{}]{aes\+\_\+key}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decrypt private RSA key using AES key.
+
+Parameters:
+    encrypted_data (bytes): byte string consisting of a 16-byte iv and AES-encrypted RSA key
+    aes_key (bytes): The AES key (32 bytes) used for decryption.
+
+Returns:
+    rsa.RSAPrivateKey: RSA private key object.
+
+Raises:
+    ValueError: If padding is invalid.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_ab63d69072dde1ba709216176432b12a2}\index{functionality@{functionality}!derive\_aes\_key@{derive\_aes\_key}}
+\index{derive\_aes\_key@{derive\_aes\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{derive\_aes\_key()}{derive\_aes\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_ab63d69072dde1ba709216176432b12a2} 
+functionality.\+derive\+\_\+aes\+\_\+key (\begin{DoxyParamCaption}\item[{}]{pin}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Derive a a 256-bit SHA key.
+
+Parameters:
+    pin (str): User-provided pin.
+
+Returns:
+    bytes: A 32-byte AES key derived from the SHA-256 hash of the pin.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_a3d114e05619d61fc17864255f30a3621}\index{functionality@{functionality}!encrypt\_private\_key@{encrypt\_private\_key}}
+\index{encrypt\_private\_key@{encrypt\_private\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{encrypt\_private\_key()}{encrypt\_private\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a3d114e05619d61fc17864255f30a3621} 
+functionality.\+encrypt\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{}]{private\+\_\+key}{, }\item[{}]{aes\+\_\+key}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Encrypt private RSA key using AES key.
+
+Parameters:
+    private_key (rsa.RSAPrivateKey): The RSA private key object to encrypt.
+    aes_key (bytes): AES bytes.
+
+Returns:
+    bytes: A byte string with initialization vector and encrypted RSA private key
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_a484f43f22fe550fcdb76686f6ac78d3f}\index{functionality@{functionality}!generate\_rsa\_key@{generate\_rsa\_key}}
+\index{generate\_rsa\_key@{generate\_rsa\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{generate\_rsa\_key()}{generate\_rsa\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a484f43f22fe550fcdb76686f6ac78d3f} 
+functionality.\+generate\+\_\+rsa\+\_\+key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a 4096-bit RSA private key.
+
+Uses a public exponent of 65537 and the default cryptographic backend.
+
+Returns:
+    rsa.RSAPrivateKey: A newly generated RSA private key object.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_ad9c228d18da80a90a4befdfd2a967315}\index{functionality@{functionality}!load\_and\_decrypt\_private\_key@{load\_and\_decrypt\_private\_key}}
+\index{load\_and\_decrypt\_private\_key@{load\_and\_decrypt\_private\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{load\_and\_decrypt\_private\_key()}{load\_and\_decrypt\_private\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_ad9c228d18da80a90a4befdfd2a967315} 
+functionality.\+load\+\_\+and\+\_\+decrypt\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{}]{file\+\_\+path}{, }\item[{}]{pin}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reads encrypted private key from .pem file and returns it in DER encoding
+
+Parameters:
+    file_path (str): Path to the PEM-formatted public key file.
+
+Returns:
+    rsa.RSAPrivateKey: RSA private key object.
+    
+Side Effects:
+    - Logs debug messages about the operation.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_adc94e58267a43d79d7070c92d48a858d}\index{functionality@{functionality}!prepare\_public\_key@{prepare\_public\_key}}
+\index{prepare\_public\_key@{prepare\_public\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{prepare\_public\_key()}{prepare\_public\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_adc94e58267a43d79d7070c92d48a858d} 
+functionality.\+prepare\+\_\+public\+\_\+key (\begin{DoxyParamCaption}\item[{}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reads public key from .pem file and returns it in DER encoding
+
+Parameters:
+    file_path (str): Path to the PEM-formatted public key file.
+
+Returns:
+    bytes: RSA public key bytes with DER encoding format.
+    
+Side Effects:
+    - Logs debug messages about the operation.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_a9b4a02e154722920309b635dded95381}\index{functionality@{functionality}!save\_encrypted\_privat\_key@{save\_encrypted\_privat\_key}}
+\index{save\_encrypted\_privat\_key@{save\_encrypted\_privat\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{save\_encrypted\_privat\_key()}{save\_encrypted\_privat\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a9b4a02e154722920309b635dded95381} 
+functionality.\+save\+\_\+encrypted\+\_\+privat\+\_\+key (\begin{DoxyParamCaption}\item[{}]{encrypted\+\_\+privat\+\_\+key}{, }\item[{}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save an AES-encrypted RSA private key to a binary file.
+
+Parameters:
+    encrypted_privat_key (bytes): Encrypted private key data.
+    output_file (str): Path to the output file.
+
+Side Effects:
+    - Writes the encrypted key to the file.
+    - Logs the save operation.
+
+Returns:
+    None        
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_ab69adcb8bcfa1e53173267c7d60361c8}\index{functionality@{functionality}!save\_public\_key@{save\_public\_key}}
+\index{save\_public\_key@{save\_public\_key}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{save\_public\_key()}{save\_public\_key()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_ab69adcb8bcfa1e53173267c7d60361c8} 
+functionality.\+save\+\_\+public\+\_\+key (\begin{DoxyParamCaption}\item[{}]{public\+\_\+key}{, }\item[{}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save an RSA public key to a PEM-formatted file.
+
+Parameters:
+    public_key (rsa.RSAPublicKey): The RSA public key to save.
+    output_file (str): Path to the output file.
+
+Side Effects:
+    - Writes the public key in PEM format to the file.
+    - Logs the save operation.
+
+Returns:
+    None   
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_a1a519b61539d672fec01dd521eb369b5}\index{functionality@{functionality}!sign\_pdf@{sign\_pdf}}
+\index{sign\_pdf@{sign\_pdf}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{sign\_pdf()}{sign\_pdf()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a1a519b61539d672fec01dd521eb369b5} 
+functionality.\+sign\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+file\+\_\+path}{, }\item[{}]{cert}{, }\item[{}]{key}{, }\item[{}]{change\+\_\+name}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Digitally sign a PDF using an X.509 certificate and RSA private key.
+
+Parameters:
+    pdf_file_path (str): Path to the PDF file to be signed.
+    cert (x509.Certificate): The X.509 certificate used for signing.
+    key (rsa.RSAPrivateKey): The RSA private key corresponding to the certificate.
+    change_name (bool): If True, output file will be named with '_signed.pdf' suffix.
+
+Side Effects:
+    - Writes a new signed PDF file to disk (overwrites input if `change_name` is False).
+    - Logs type validation, encoding, and signing steps.
+    - Logs and suppresses exceptions during signing.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_ad18951c3b5c0dd555a3e18bdf4fab929}\index{functionality@{functionality}!sign\_pdf\_full@{sign\_pdf\_full}}
+\index{sign\_pdf\_full@{sign\_pdf\_full}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{sign\_pdf\_full()}{sign\_pdf\_full()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_ad18951c3b5c0dd555a3e18bdf4fab929} 
+functionality.\+sign\+\_\+pdf\+\_\+full (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+file\+\_\+path}{, }\item[{}]{key}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a certificate and use it to sign a PDF.
+
+This function generates a self-signed certificate from the given RSA private key
+and uses it to apply a digital signature to the specified PDF file.
+
+Parameters:
+    pdf_file_path (str): Path to the PDF file to be signed.
+    key (rsa.RSAPrivateKey): The RSA private key used for signing.
+
+Side Effects:
+    - Modifies the PDF file at `pdf_file_path` by adding a digital signature.
+\end{DoxyVerb}
+ \Hypertarget{namespacefunctionality_aee915e12008f5adbf00c3f4412691d07}\index{functionality@{functionality}!verify\_pdf@{verify\_pdf}}
+\index{verify\_pdf@{verify\_pdf}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{verify\_pdf()}{verify\_pdf()}}
+{\footnotesize\ttfamily \label{namespacefunctionality_aee915e12008f5adbf00c3f4412691d07} 
+functionality.\+verify\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+file\+\_\+path}{, }\item[{}]{public\+\_\+key}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify the digital signature of a signed PDF against a provided public key.
+
+Parameters:
+    pdf_file_path (str): Path to the signed PDF file.
+    public_key (Crypto.PublicKey.RSA.RsaKey): RSA public key to compare with the signer's certificate.
+
+Returns:
+    bool: True if the signature is cryptographically valid and matches the provided public key, False otherwise.
+
+Side Effects:
+    - Logs debugging information about the verification process.
+    - Reads and parses the PDF file.
+
+Notes:
+    - The function compares SHA-256 hashes of the provided public key to hash from the certificate.
+    - Requires the PDF to have exactly one embedded signature.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacefunctionality_a510ff7ae6d0e44e0a7a6cd42205535c7}\index{functionality@{functionality}!level@{level}}
+\index{level@{level}!functionality@{functionality}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \label{namespacefunctionality_a510ff7ae6d0e44e0a7a6cd42205535c7} 
+functionality.\+level}
+
