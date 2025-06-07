@@ -2,3 +2,8 @@ Crypto
 PyPDF2 
 pandas
 pyhanko
+os
+psutil
+threading
+Crypto
+tkinter

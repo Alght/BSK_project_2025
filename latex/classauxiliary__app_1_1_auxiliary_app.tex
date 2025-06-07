@@ -20,9 +20,13 @@ str \mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a79db7f89fb79fd4828b4
 \item 
 \mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}} = root
 \item 
-\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a4ab19a605935189bd4211792d8f8c94d}{message}} = String\+Var()
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a046118f90173ad306b2157ecc09891d8}{message\+\_\+key}} = String\+Var()
 \item 
-\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_af824b5eac4c37da87adf0e097cd806ea}{label}} = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message)
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a17e3eb0c25f44af2fd15c1c0b0719438}{label\+\_\+key}} = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+key)
+\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a8295e2c94c8ad2efaab3c7aecb438780}{message\+\_\+pin}} = String\+Var()
+\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_ae9983647982861be32c03561beed96a3}{label\+\_\+pin}} = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+pin)
 \item 
 \mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a72699c1a8764634d7e25710e15035e12}{pin\+\_\+var}} = String\+Var()
 \end{DoxyCompactItemize}
@@ -36,19 +40,21 @@ str \mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a79db7f89fb79fd4828b4
 auxiliary\+\_\+app.\+Auxiliary\+App.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{root}{}\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Initialize the RSA Key Generator app.
-
 This class sets up a simple Tkinter GUI to collect a 4-digit PIN and a file path to save a generated RSA private key.
 
 Parameters:
     root (Tk): The root Tkinter window.
 
 Attributes:
-    pin (str): 4-digit PIN entered by the user.
-    file_path (str or None): Path to save the generated private key.
-    root (Tk): The root Tkinter window.
-    message(StringVar): Stores the status or instruction message.
-    label(Label): Displays messages to the user.
+    root (Tk): The root Tkinter window.    
+    message_key(StringVar): Stores the status or instruction message for key / key path.
+    label_key(Label): Displays messages to the user.
+    message_pin(StringVar): Stores the status or instruction message for pin.
+    label_pin(Label): Displays messages to the user.
+
     pin_var (StringVar): Tkinter variable linked to the PIN entry widget.
+    pin (str): 4-digit PIN entered by the user.
+    file_path (str or None): Path to save the generated private key.               
 \end{DoxyVerb}
  
 
@@ -92,7 +98,7 @@ auxiliary\+\_\+app.\+Auxiliary\+App.\+submit (\begin{DoxyParamCaption}\item[{}]{
 
 Validates that:
     - The PIN is not empty.
-    - The PIN is at least 4 characters long.
+    - The PIN has 4 characters.
     - A file path has been selected.
 
 If all checks pass, it calls `create_keys()` to generate RSA keys.
@@ -111,17 +117,29 @@ Side Effects:
 {\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a80d0920840f6b2865a5ccce50631e543} 
 auxiliary\+\_\+app.\+Auxiliary\+App.\+file\+\_\+path = None}
 
-\Hypertarget{classauxiliary__app_1_1_auxiliary_app_af824b5eac4c37da87adf0e097cd806ea}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!label@{label}}
-\index{label@{label}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
-\doxysubsubsection{\texorpdfstring{label}{label}}
-{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_af824b5eac4c37da87adf0e097cd806ea} 
-auxiliary\+\_\+app.\+Auxiliary\+App.\+label = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message)}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a17e3eb0c25f44af2fd15c1c0b0719438}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!label\_key@{label\_key}}
+\index{label\_key@{label\_key}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{label\_key}{label\_key}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a17e3eb0c25f44af2fd15c1c0b0719438} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+label\+\_\+key = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+key)}
 
-\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a4ab19a605935189bd4211792d8f8c94d}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!message@{message}}
-\index{message@{message}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
-\doxysubsubsection{\texorpdfstring{message}{message}}
-{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a4ab19a605935189bd4211792d8f8c94d} 
-auxiliary\+\_\+app.\+Auxiliary\+App.\+message = String\+Var()}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_ae9983647982861be32c03561beed96a3}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!label\_pin@{label\_pin}}
+\index{label\_pin@{label\_pin}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{label\_pin}{label\_pin}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_ae9983647982861be32c03561beed96a3} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+label\+\_\+pin = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+pin)}
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a046118f90173ad306b2157ecc09891d8}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!message\_key@{message\_key}}
+\index{message\_key@{message\_key}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{message\_key}{message\_key}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a046118f90173ad306b2157ecc09891d8} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+message\+\_\+key = String\+Var()}
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a8295e2c94c8ad2efaab3c7aecb438780}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!message\_pin@{message\_pin}}
+\index{message\_pin@{message\_pin}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{message\_pin}{message\_pin}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a8295e2c94c8ad2efaab3c7aecb438780} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+message\+\_\+pin = String\+Var()}
 
 \Hypertarget{classauxiliary__app_1_1_auxiliary_app_a79db7f89fb79fd4828b443a5f9e60017}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!pin@{pin}}
 \index{pin@{pin}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}

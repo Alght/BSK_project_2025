@@ -1,0 +1,459 @@
+\doxysection{main\+\_\+app.\+Encryption\+App Class Reference}
+\hypertarget{classmain__app_1_1_encryption_app}{}\label{classmain__app_1_1_encryption_app}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a1b64609627b180a45341ff151571d2d1}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}})
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a8392f39455489bea080d2d2071bce8f8}{get\+\_\+usb\+\_\+drives}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a3f9dd9ffcae49cc2449a6a52158d1830}{monitor\+\_\+usb}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a00990895f16263c330186c60ba228dea}{on\+\_\+usb\+\_\+inserted}} (self, drive\+\_\+path)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a2e4ac275656c497ad0864827d72d230e}{find\+\_\+pem\+\_\+files}} (self, directory)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a3bf9cd69ca611a9f505cc37770cb9030}{submit\+\_\+pin}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_ac39a8b1de86493b1a66ef2bf919e6cc5}{prepare\+\_\+private\+\_\+key}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a0374942a28d4f4363c1c8e03a460f9bf}{choose\+\_\+pdf}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a42c95baa7078bc05aa6aca9eb7298976}{choose\+\_\+pub\+\_\+key}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a76977ebe4e939fd297aed15c77173132}{prepare\+\_\+public\+\_\+key}} (self, file\+\_\+path)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a0b9670231cbea26d5337bf45fd346834}{sign\+\_\+pdf}} (self)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_ae574d9775040fb617f59d519320ebc2a}{verify\+\_\+pdf}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}} = root
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a6cb9c56b47b001f20cd0cd8063c0cca9}{message\+\_\+pdf}} = String\+Var()
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_aa3234f49ac5a2222f384974793402bf5}{message\+\_\+private\+\_\+key}} = String\+Var()
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a6ab5f79abd0c56d2381ee3a7726d5ad2}{message\+\_\+public\+\_\+key}} = String\+Var()
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_ac1ef20bfbea43a7497b5a05e23f8d01b}{message\+\_\+general}} = String\+Var()
+\item 
+str \mbox{\hyperlink{classmain__app_1_1_encryption_app_ac9f89df0ee00136206c78f4530ad5f7e}{pin}} = "{}"{}
+\item 
+str \mbox{\hyperlink{classmain__app_1_1_encryption_app_a576fe33479b2b7f0d0078555678d8492}{pdf\+\_\+file\+\_\+path}} = "{}"{}
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a6642186f389403c92c28046b2830d946}{private\+\_\+key\+\_\+path}} = None
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a43f7bc6464e944176f245bec9e57fecf}{public\+\_\+key\+\_\+path}} = None
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a9dc8d0c2a234edc399716725a67713d3}{private\+\_\+key}} = None
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_af1ae48011ac9be176c5c4b787b58c041}{public\+\_\+key}} = None
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a07e75a7fdd6e74fb38e17649c056a15a}{cert}} = None
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a95d1030083258d3005b3ac846a65dec1}{pin\+\_\+var}} = String\+Var()
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a67a5e91da3c19344bc8a9895d76f289d}{pin\+\_\+entry}} = Entry(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+pin\+\_\+var, font=("{}calibre"{}, 10, "{}normal"{}), show="{}\texorpdfstring{$\ast$}{*}"{})
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_abd6cd0ec1cc407d909535833a9295ec3}{submit\+\_\+pin}} = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Submit"{}, command=self.\+submit\+\_\+pin)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a239e4881ef1ccb1e06e658cc0bdbc52c}{choose\+\_\+pdf\+\_\+btn}} = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Choose PDF"{}, command=self.\+choose\+\_\+pdf)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_ac79b3f205c6bc1ff2b6bb8226890428b}{sign\+\_\+pdf\+\_\+btn}} = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Sign"{}, command=self.\+sign\+\_\+pdf)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a2c0df5250027578f9a85fcbd41b8f780}{verify\+\_\+btn}} = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Verify"{}, command=self.\+verify\+\_\+pdf)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a98deba50e7a93e071c056f6081f7aa97}{choose\+\_\+pub\+\_\+key\+\_\+btn}} = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Choose public key"{}, command=self.\+choose\+\_\+pub\+\_\+key)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a57b23874f1d91bc9da7dbeda3764d0d1}{label\+\_\+pdf}} = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+pdf)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a7e1f66472c45d4808529d3c175c1a8a8}{label\+\_\+private\+\_\+key}} = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+private\+\_\+key)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a853afd515b93a23bf716aae80676cabb}{label\+\_\+public\+\_\+key}} = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+public\+\_\+key)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a6a18c485686785ab756cbb7805db7bb5}{label\+\_\+general}} = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+general)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_ab26280eaed07e52d0ce05922af94897f}{detected\+\_\+drives}} = set(self.\+get\+\_\+usb\+\_\+drives())
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a8f74cf76502614f181d62f1fcd55fe45}{monitor\+\_\+thread}} = threading.\+Thread(target=self.\+monitor\+\_\+usb, daemon=True)
+\item 
+\mbox{\hyperlink{classmain__app_1_1_encryption_app_a43228634e9bdfb58d11a5ac93c57ada6}{on\+\_\+usb\+\_\+inserted}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmain__app_1_1_encryption_app_a1b64609627b180a45341ff151571d2d1}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a1b64609627b180a45341ff151571d2d1} 
+main\+\_\+app.\+Encryption\+App.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{root}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}GUI application for PDF signing and signature verification using RSA and AES encryption.
+
+This application provides a graphical interface for:
+- Entering a PIN to decrypt an RSA private key.
+- Selecting a PDF file to sign or verify.
+- Choosing a public key file for signature verification.
+- Automatically detecting USB drives to retrieve keys.
+
+Parameters:
+    root (Tk): The root Tkinter window.
+
+Attributes:
+    root (Tk): Main Tkinter window.
+    pin (str): PIN used to derive AES key.
+    pdf_file_path (str): Path to the selected PDF file.
+    private_key_path (str or None): Path to the detected encrypted private key file.
+    public_key_path (str or None): Path to the selected public key file.
+    private_key (RSAPrivateKey or None): Decrypted private RSA key.
+    public_key (RSAPublicKey or None): Loaded public RSA key.
+    cert (x509.Certificate or None): Certificate generated for signing.
+    pin_var (StringVar): Linked to the PIN entry widget.
+    pin_entry (Entry): PIN input widget.
+    submit_pin (Button): Button to submit the PIN.
+    choose_pdf_btn (Button): Button to select a PDF for signing/verifying.
+    sign_pdf_btn (Button): Button to sign the selected PDF.
+    verify_btn (Button): Button to verify the PDF signature.
+    choose_pub_key_btn (Button): Button to select a public key file.
+
+    message_pdf (StringVar): Status or instruction message_pdf displayed to the user.
+    message_private_key (StringVar): Message displaying key detection info.
+    message_public_key (StringVar): Message displaying chosen public key info.
+    message_general (StringVar): Message displaying general info.
+
+    label_pdf (Label): Displays general messages to the user.
+    label_private_key (Label): Displays key detection status.
+    label_public_key (Label): Displays key detection status.
+    label_general (Label): Displays general messages to the user.
+
+    detected_drives (set): Set of USB drives detected on launch.
+    monitor_thread (Thread): Background thread to monitor USB drive changes.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmain__app_1_1_encryption_app_a0374942a28d4f4363c1c8e03a460f9bf}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!choose\_pdf@{choose\_pdf}}
+\index{choose\_pdf@{choose\_pdf}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{choose\_pdf()}{choose\_pdf()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a0374942a28d4f4363c1c8e03a460f9bf} 
+main\+\_\+app.\+Encryption\+App.\+choose\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open a file dialog to choose PDF.
+
+Side Effects:
+- PDF file path is saved.
+Logs debug information.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a42c95baa7078bc05aa6aca9eb7298976}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!choose\_pub\_key@{choose\_pub\_key}}
+\index{choose\_pub\_key@{choose\_pub\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{choose\_pub\_key()}{choose\_pub\_key()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a42c95baa7078bc05aa6aca9eb7298976} 
+main\+\_\+app.\+Encryption\+App.\+choose\+\_\+pub\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open a file dialog to choose public key.
+
+Side Effects:
+- Public key is loaded into memory.
+- Logs debug messages about the operation.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a2e4ac275656c497ad0864827d72d230e}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!find\_pem\_files@{find\_pem\_files}}
+\index{find\_pem\_files@{find\_pem\_files}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{find\_pem\_files()}{find\_pem\_files()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a2e4ac275656c497ad0864827d72d230e} 
+main\+\_\+app.\+Encryption\+App.\+find\+\_\+pem\+\_\+files (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{directory}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Continuously monitor USB drives for new insertions.
+
+Parameters:
+    directory (string): path to directory with private key.
+    
+Checks all files in given directory and returns ones with .pem extension.
+
+Returns:
+    list: A list of files with .pem extension.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a8392f39455489bea080d2d2071bce8f8}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!get\_usb\_drives@{get\_usb\_drives}}
+\index{get\_usb\_drives@{get\_usb\_drives}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{get\_usb\_drives()}{get\_usb\_drives()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a8392f39455489bea080d2d2071bce8f8} 
+main\+\_\+app.\+Encryption\+App.\+get\+\_\+usb\+\_\+drives (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Detect currently mounted USB drives.
+
+Uses `psutil.disk_partitions()` to scan for removable drives by checking
+the 'opts' field of each partition.
+
+Returns:
+    list: A list of mount points for all detected USB drives.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a3f9dd9ffcae49cc2449a6a52158d1830}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!monitor\_usb@{monitor\_usb}}
+\index{monitor\_usb@{monitor\_usb}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{monitor\_usb()}{monitor\_usb()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a3f9dd9ffcae49cc2449a6a52158d1830} 
+main\+\_\+app.\+Encryption\+App.\+monitor\+\_\+usb (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Continuously monitor USB drives for new insertions.
+
+This method runs in a background thread and periodically (every 2 seconds) checks
+the currently mounted USB drives by calling `get_usb_drives()`.
+
+When a new USB drive is detected, it schedules a call to `on_usb_inserted` on the main
+Tkinter thread using `root.after` to safely handle UI updates.
+
+This loop runs indefinitely as a daemon thread.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a00990895f16263c330186c60ba228dea}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!on\_usb\_inserted@{on\_usb\_inserted}}
+\index{on\_usb\_inserted@{on\_usb\_inserted}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{on\_usb\_inserted()}{on\_usb\_inserted()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a00990895f16263c330186c60ba228dea} 
+main\+\_\+app.\+Encryption\+App.\+on\+\_\+usb\+\_\+inserted (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{drive\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Continuously monitor USB drives for new insertions.
+
+Parameters:
+    drive_path (string): path to detectedd USB.
+
+This method runs in a background thread and periodically (every 2 seconds) checks
+the currently mounted USB drives by calling `get_usb_drives()`.
+
+When a new USB drive is detected, it schedules a call to `on_usb_inserted` on the main
+Tkinter thread using `root.after` to safely handle UI updates.
+
+This loop runs indefinitely as a daemon thread.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_ac39a8b1de86493b1a66ef2bf919e6cc5}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!prepare\_private\_key@{prepare\_private\_key}}
+\index{prepare\_private\_key@{prepare\_private\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{prepare\_private\_key()}{prepare\_private\_key()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ac39a8b1de86493b1a66ef2bf919e6cc5} 
+main\+\_\+app.\+Encryption\+App.\+prepare\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load and decrypt private key using pin. 
+
+Side Effects:
+- Private key is decrypted and loaded into memory.
+- Logs encryption status.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a76977ebe4e939fd297aed15c77173132}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!prepare\_public\_key@{prepare\_public\_key}}
+\index{prepare\_public\_key@{prepare\_public\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{prepare\_public\_key()}{prepare\_public\_key()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a76977ebe4e939fd297aed15c77173132} 
+main\+\_\+app.\+Encryption\+App.\+prepare\+\_\+public\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open a file dialog to choose public key. Key format is checked and if it is supported key is loaded into memory, otherwise it is set to None.
+
+Parameters:
+    file_path (str): Path to public key.
+
+Side Effects:
+- Public key is loaded into memory.
+- Logs debug messages about the operation.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a0b9670231cbea26d5337bf45fd346834}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!sign\_pdf@{sign\_pdf}}
+\index{sign\_pdf@{sign\_pdf}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{sign\_pdf()}{sign\_pdf()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a0b9670231cbea26d5337bf45fd346834} 
+main\+\_\+app.\+Encryption\+App.\+sign\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sign pdf with `sign_pdf_full()` function.
+
+Side Effects:
+- PDF is signed.
+- Logs debug messages about the operation.
+- Shows approriate messages.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_a3bf9cd69ca611a9f505cc37770cb9030}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!submit\_pin@{submit\_pin}}
+\index{submit\_pin@{submit\_pin}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{submit\_pin()}{submit\_pin()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a3bf9cd69ca611a9f505cc37770cb9030} 
+main\+\_\+app.\+Encryption\+App.\+submit\+\_\+pin (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handle the submission of the PIN, private key must be detected for the function to work.
+
+Loads private key from detected file with  `prepare_private_key()` function.
+
+Side Effects:
+- Private key is loaded into memory.
+- Logs pin length and key.
+- Appropriate message_pdf is shown.
+- PIN input is cleared.
+\end{DoxyVerb}
+ \Hypertarget{classmain__app_1_1_encryption_app_ae574d9775040fb617f59d519320ebc2a}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!verify\_pdf@{verify\_pdf}}
+\index{verify\_pdf@{verify\_pdf}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{verify\_pdf()}{verify\_pdf()}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ae574d9775040fb617f59d519320ebc2a} 
+main\+\_\+app.\+Encryption\+App.\+verify\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify pdf with `verify_pdf()` function.
+
+Side Effects:
+- PDF is verified.
+- Logs debug messages about the operation.
+- Shows approriate messages.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmain__app_1_1_encryption_app_a07e75a7fdd6e74fb38e17649c056a15a}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!cert@{cert}}
+\index{cert@{cert}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{cert}{cert}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a07e75a7fdd6e74fb38e17649c056a15a} 
+main\+\_\+app.\+Encryption\+App.\+cert = None}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a239e4881ef1ccb1e06e658cc0bdbc52c}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!choose\_pdf\_btn@{choose\_pdf\_btn}}
+\index{choose\_pdf\_btn@{choose\_pdf\_btn}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{choose\_pdf\_btn}{choose\_pdf\_btn}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a239e4881ef1ccb1e06e658cc0bdbc52c} 
+main\+\_\+app.\+Encryption\+App.\+choose\+\_\+pdf\+\_\+btn = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Choose PDF"{}, command=self.\+choose\+\_\+pdf)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a98deba50e7a93e071c056f6081f7aa97}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!choose\_pub\_key\_btn@{choose\_pub\_key\_btn}}
+\index{choose\_pub\_key\_btn@{choose\_pub\_key\_btn}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{choose\_pub\_key\_btn}{choose\_pub\_key\_btn}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a98deba50e7a93e071c056f6081f7aa97} 
+main\+\_\+app.\+Encryption\+App.\+choose\+\_\+pub\+\_\+key\+\_\+btn = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Choose public key"{}, command=self.\+choose\+\_\+pub\+\_\+key)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_ab26280eaed07e52d0ce05922af94897f}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!detected\_drives@{detected\_drives}}
+\index{detected\_drives@{detected\_drives}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{detected\_drives}{detected\_drives}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ab26280eaed07e52d0ce05922af94897f} 
+main\+\_\+app.\+Encryption\+App.\+detected\+\_\+drives = set(self.\+get\+\_\+usb\+\_\+drives())}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a6a18c485686785ab756cbb7805db7bb5}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!label\_general@{label\_general}}
+\index{label\_general@{label\_general}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{label\_general}{label\_general}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a6a18c485686785ab756cbb7805db7bb5} 
+main\+\_\+app.\+Encryption\+App.\+label\+\_\+general = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+general)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a57b23874f1d91bc9da7dbeda3764d0d1}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!label\_pdf@{label\_pdf}}
+\index{label\_pdf@{label\_pdf}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{label\_pdf}{label\_pdf}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a57b23874f1d91bc9da7dbeda3764d0d1} 
+main\+\_\+app.\+Encryption\+App.\+label\+\_\+pdf = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+pdf)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a7e1f66472c45d4808529d3c175c1a8a8}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!label\_private\_key@{label\_private\_key}}
+\index{label\_private\_key@{label\_private\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{label\_private\_key}{label\_private\_key}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a7e1f66472c45d4808529d3c175c1a8a8} 
+main\+\_\+app.\+Encryption\+App.\+label\+\_\+private\+\_\+key = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+private\+\_\+key)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a853afd515b93a23bf716aae80676cabb}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!label\_public\_key@{label\_public\_key}}
+\index{label\_public\_key@{label\_public\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{label\_public\_key}{label\_public\_key}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a853afd515b93a23bf716aae80676cabb} 
+main\+\_\+app.\+Encryption\+App.\+label\+\_\+public\+\_\+key = Label(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+message\+\_\+public\+\_\+key)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_ac1ef20bfbea43a7497b5a05e23f8d01b}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!message\_general@{message\_general}}
+\index{message\_general@{message\_general}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{message\_general}{message\_general}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ac1ef20bfbea43a7497b5a05e23f8d01b} 
+main\+\_\+app.\+Encryption\+App.\+message\+\_\+general = String\+Var()}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a6cb9c56b47b001f20cd0cd8063c0cca9}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!message\_pdf@{message\_pdf}}
+\index{message\_pdf@{message\_pdf}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{message\_pdf}{message\_pdf}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a6cb9c56b47b001f20cd0cd8063c0cca9} 
+main\+\_\+app.\+Encryption\+App.\+message\+\_\+pdf = String\+Var()}
+
+\Hypertarget{classmain__app_1_1_encryption_app_aa3234f49ac5a2222f384974793402bf5}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!message\_private\_key@{message\_private\_key}}
+\index{message\_private\_key@{message\_private\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{message\_private\_key}{message\_private\_key}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_aa3234f49ac5a2222f384974793402bf5} 
+main\+\_\+app.\+Encryption\+App.\+message\+\_\+private\+\_\+key = String\+Var()}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a6ab5f79abd0c56d2381ee3a7726d5ad2}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!message\_public\_key@{message\_public\_key}}
+\index{message\_public\_key@{message\_public\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{message\_public\_key}{message\_public\_key}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a6ab5f79abd0c56d2381ee3a7726d5ad2} 
+main\+\_\+app.\+Encryption\+App.\+message\+\_\+public\+\_\+key = String\+Var()}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a8f74cf76502614f181d62f1fcd55fe45}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!monitor\_thread@{monitor\_thread}}
+\index{monitor\_thread@{monitor\_thread}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{monitor\_thread}{monitor\_thread}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a8f74cf76502614f181d62f1fcd55fe45} 
+main\+\_\+app.\+Encryption\+App.\+monitor\+\_\+thread = threading.\+Thread(target=self.\+monitor\+\_\+usb, daemon=True)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a43228634e9bdfb58d11a5ac93c57ada6}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!on\_usb\_inserted@{on\_usb\_inserted}}
+\index{on\_usb\_inserted@{on\_usb\_inserted}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{on\_usb\_inserted}{on\_usb\_inserted}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a43228634e9bdfb58d11a5ac93c57ada6} 
+main\+\_\+app.\+Encryption\+App.\+on\+\_\+usb\+\_\+inserted}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a576fe33479b2b7f0d0078555678d8492}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!pdf\_file\_path@{pdf\_file\_path}}
+\index{pdf\_file\_path@{pdf\_file\_path}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{pdf\_file\_path}{pdf\_file\_path}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a576fe33479b2b7f0d0078555678d8492} 
+main\+\_\+app.\+Encryption\+App.\+pdf\+\_\+file\+\_\+path = "{}"{}}
+
+\Hypertarget{classmain__app_1_1_encryption_app_ac9f89df0ee00136206c78f4530ad5f7e}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!pin@{pin}}
+\index{pin@{pin}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{pin}{pin}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ac9f89df0ee00136206c78f4530ad5f7e} 
+str main\+\_\+app.\+Encryption\+App.\+pin = "{}"{}}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a67a5e91da3c19344bc8a9895d76f289d}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!pin\_entry@{pin\_entry}}
+\index{pin\_entry@{pin\_entry}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{pin\_entry}{pin\_entry}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a67a5e91da3c19344bc8a9895d76f289d} 
+main\+\_\+app.\+Encryption\+App.\+pin\+\_\+entry = Entry(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, textvariable=self.\+pin\+\_\+var, font=("{}calibre"{}, 10, "{}normal"{}), show="{}\texorpdfstring{$\ast$}{*}"{})}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a95d1030083258d3005b3ac846a65dec1}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!pin\_var@{pin\_var}}
+\index{pin\_var@{pin\_var}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{pin\_var}{pin\_var}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a95d1030083258d3005b3ac846a65dec1} 
+main\+\_\+app.\+Encryption\+App.\+pin\+\_\+var = String\+Var()}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a9dc8d0c2a234edc399716725a67713d3}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!private\_key@{private\_key}}
+\index{private\_key@{private\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{private\_key}{private\_key}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a9dc8d0c2a234edc399716725a67713d3} 
+main\+\_\+app.\+Encryption\+App.\+private\+\_\+key = None}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a6642186f389403c92c28046b2830d946}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!private\_key\_path@{private\_key\_path}}
+\index{private\_key\_path@{private\_key\_path}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{private\_key\_path}{private\_key\_path}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a6642186f389403c92c28046b2830d946} 
+main\+\_\+app.\+Encryption\+App.\+private\+\_\+key\+\_\+path = None}
+
+\Hypertarget{classmain__app_1_1_encryption_app_af1ae48011ac9be176c5c4b787b58c041}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!public\_key@{public\_key}}
+\index{public\_key@{public\_key}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{public\_key}{public\_key}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_af1ae48011ac9be176c5c4b787b58c041} 
+main\+\_\+app.\+Encryption\+App.\+public\+\_\+key = None}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a43f7bc6464e944176f245bec9e57fecf}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!public\_key\_path@{public\_key\_path}}
+\index{public\_key\_path@{public\_key\_path}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{public\_key\_path}{public\_key\_path}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a43f7bc6464e944176f245bec9e57fecf} 
+main\+\_\+app.\+Encryption\+App.\+public\+\_\+key\+\_\+path = None}
+
+\Hypertarget{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!root@{root}}
+\index{root@{root}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a} 
+main\+\_\+app.\+Encryption\+App.\+root = root}
+
+\Hypertarget{classmain__app_1_1_encryption_app_ac79b3f205c6bc1ff2b6bb8226890428b}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!sign\_pdf\_btn@{sign\_pdf\_btn}}
+\index{sign\_pdf\_btn@{sign\_pdf\_btn}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{sign\_pdf\_btn}{sign\_pdf\_btn}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_ac79b3f205c6bc1ff2b6bb8226890428b} 
+main\+\_\+app.\+Encryption\+App.\+sign\+\_\+pdf\+\_\+btn = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Sign"{}, command=self.\+sign\+\_\+pdf)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_abd6cd0ec1cc407d909535833a9295ec3}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!submit\_pin@{submit\_pin}}
+\index{submit\_pin@{submit\_pin}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{submit\_pin}{submit\_pin}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_abd6cd0ec1cc407d909535833a9295ec3} 
+main\+\_\+app.\+Encryption\+App.\+submit\+\_\+pin = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Submit"{}, command=self.\+submit\+\_\+pin)}
+
+\Hypertarget{classmain__app_1_1_encryption_app_a2c0df5250027578f9a85fcbd41b8f780}\index{main\_app.EncryptionApp@{main\_app.EncryptionApp}!verify\_btn@{verify\_btn}}
+\index{verify\_btn@{verify\_btn}!main\_app.EncryptionApp@{main\_app.EncryptionApp}}
+\doxysubsubsection{\texorpdfstring{verify\_btn}{verify\_btn}}
+{\footnotesize\ttfamily \label{classmain__app_1_1_encryption_app_a2c0df5250027578f9a85fcbd41b8f780} 
+main\+\_\+app.\+Encryption\+App.\+verify\+\_\+btn = Button(\mbox{\hyperlink{classmain__app_1_1_encryption_app_ad832991d3914694f599d020ed79e336a}{root}}, text="{}Verify"{}, command=self.\+verify\+\_\+pdf)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main__app_8py}{main\+\_\+app.\+py}}\end{DoxyCompactItemize}

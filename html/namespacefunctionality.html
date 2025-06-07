@@ -123,8 +123,8 @@ Functions</h2></td></tr>
 <tr class="separator:ae6531eefcaa9bb444d53f751e90ee51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69adcb8bcfa1e53173267c7d60361c8" id="r_ab69adcb8bcfa1e53173267c7d60361c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab69adcb8bcfa1e53173267c7d60361c8">save_public_key</a> (public_key, output_file)</td></tr>
 <tr class="separator:ab69adcb8bcfa1e53173267c7d60361c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b4a02e154722920309b635dded95381" id="r_a9b4a02e154722920309b635dded95381"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4a02e154722920309b635dded95381">save_encrypted_privat_key</a> (encrypted_privat_key, output_file)</td></tr>
-<tr class="separator:a9b4a02e154722920309b635dded95381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de63ba33efd5250140b21a82111373e" id="r_a1de63ba33efd5250140b21a82111373e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1de63ba33efd5250140b21a82111373e">save_encrypted_private_key</a> (encrypted_private_key, output_file)</td></tr>
+<tr class="separator:a1de63ba33efd5250140b21a82111373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc94e58267a43d79d7070c92d48a858d" id="r_adc94e58267a43d79d7070c92d48a858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc94e58267a43d79d7070c92d48a858d">prepare_public_key</a> (file_path)</td></tr>
 <tr class="separator:adc94e58267a43d79d7070c92d48a858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9c228d18da80a90a4befdfd2a967315" id="r_ad9c228d18da80a90a4befdfd2a967315"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9c228d18da80a90a4befdfd2a967315">load_and_decrypt_private_key</a> (file_path, pin)</td></tr>
@@ -135,6 +135,8 @@ Functions</h2></td></tr>
 <tr class="separator:a7a93ccc5c016802e6658f6c66377157e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a519b61539d672fec01dd521eb369b5" id="r_a1a519b61539d672fec01dd521eb369b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a519b61539d672fec01dd521eb369b5">sign_pdf</a> (pdf_file_path, cert, key, change_name=False)</td></tr>
 <tr class="separator:a1a519b61539d672fec01dd521eb369b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4609c53e922d18210ffa848a3189724e" id="r_a4609c53e922d18210ffa848a3189724e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4609c53e922d18210ffa848a3189724e">verify_is_pdf_signed</a> (pdf_file_path)</td></tr>
+<tr class="separator:a4609c53e922d18210ffa848a3189724e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18951c3b5c0dd555a3e18bdf4fab929" id="r_ad18951c3b5c0dd555a3e18bdf4fab929"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad18951c3b5c0dd555a3e18bdf4fab929">sign_pdf_full</a> (pdf_file_path, key)</td></tr>
 <tr class="separator:ad18951c3b5c0dd555a3e18bdf4fab929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -241,9 +243,6 @@ Parameters:
 
 Returns:
     rsa.RSAPrivateKey: RSA private key object.
-
-Raises:
-    ValueError: If padding is invalid.
 </pre> 
 </div>
 </div>
@@ -261,7 +260,7 @@ Raises:
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Derive a a 256-bit SHA key.
+<pre class="fragment">Derive a 256-bit SHA key.
 
 Parameters:
     pin (str): User-provided pin.
@@ -381,16 +380,16 @@ Side Effects:
 </pre> 
 </div>
 </div>
-<a id="a9b4a02e154722920309b635dded95381" name="a9b4a02e154722920309b635dded95381"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b4a02e154722920309b635dded95381">&#9670;&#160;</a></span>save_encrypted_privat_key()</h2>
+<a id="a1de63ba33efd5250140b21a82111373e" name="a1de63ba33efd5250140b21a82111373e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de63ba33efd5250140b21a82111373e">&#9670;&#160;</a></span>save_encrypted_private_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">functionality.save_encrypted_privat_key </td>
+          <td class="memname">functionality.save_encrypted_private_key </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>encrypted_privat_key</em></span>, </td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>encrypted_private_key</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -402,7 +401,7 @@ Side Effects:
 <pre class="fragment">Save an AES-encrypted RSA private key to a binary file.
 
 Parameters:
-    encrypted_privat_key (bytes): Encrypted private key data.
+    encrypted_private_key (bytes): Encrypted private key data.
     output_file (str): Path to the output file.
 
 Side Effects:
@@ -485,11 +484,10 @@ Parameters:
 
 Side Effects:
     - Writes a new signed PDF file to disk (overwrites input if `change_name` is False).
-    - Logs type validation, encoding, and signing steps.
     - Logs and suppresses exceptions during signing.
 
 Returns:
-    None
+    bool: information if PDF was signed
 </pre> 
 </div>
 </div>
@@ -522,6 +520,30 @@ Parameters:
 
 Side Effects:
     - Modifies the PDF file at `pdf_file_path` by adding a digital signature.
+</pre> 
+</div>
+</div>
+<a id="a4609c53e922d18210ffa848a3189724e" name="a4609c53e922d18210ffa848a3189724e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4609c53e922d18210ffa848a3189724e">&#9670;&#160;</a></span>verify_is_pdf_signed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">functionality.verify_is_pdf_signed </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>pdf_file_path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Check if chosen PDF is signed.
+
+Parameters:
+    pdf_file_path (str): Path to the signed PDF file.
+
+Returns:
+    bool: True if the PDF contains any signature.
 </pre> 
 </div>
 </div>

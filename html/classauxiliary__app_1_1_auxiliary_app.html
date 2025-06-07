@@ -129,10 +129,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a80d0920840f6b2865a5ccce50631e543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66da11c5c4dda7a78213c6503d91c7be" id="r_a66da11c5c4dda7a78213c6503d91c7be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a> = root</td></tr>
 <tr class="separator:a66da11c5c4dda7a78213c6503d91c7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab19a605935189bd4211792d8f8c94d" id="r_a4ab19a605935189bd4211792d8f8c94d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab19a605935189bd4211792d8f8c94d">message</a> = StringVar()</td></tr>
-<tr class="separator:a4ab19a605935189bd4211792d8f8c94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af824b5eac4c37da87adf0e097cd806ea" id="r_af824b5eac4c37da87adf0e097cd806ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af824b5eac4c37da87adf0e097cd806ea">label</a> = Label(<a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a>, textvariable=self.message)</td></tr>
-<tr class="separator:af824b5eac4c37da87adf0e097cd806ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046118f90173ad306b2157ecc09891d8" id="r_a046118f90173ad306b2157ecc09891d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a046118f90173ad306b2157ecc09891d8">message_key</a> = StringVar()</td></tr>
+<tr class="separator:a046118f90173ad306b2157ecc09891d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17e3eb0c25f44af2fd15c1c0b0719438" id="r_a17e3eb0c25f44af2fd15c1c0b0719438"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17e3eb0c25f44af2fd15c1c0b0719438">label_key</a> = Label(<a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a>, textvariable=self.message_key)</td></tr>
+<tr class="separator:a17e3eb0c25f44af2fd15c1c0b0719438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8295e2c94c8ad2efaab3c7aecb438780" id="r_a8295e2c94c8ad2efaab3c7aecb438780"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8295e2c94c8ad2efaab3c7aecb438780">message_pin</a> = StringVar()</td></tr>
+<tr class="separator:a8295e2c94c8ad2efaab3c7aecb438780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9983647982861be32c03561beed96a3" id="r_ae9983647982861be32c03561beed96a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9983647982861be32c03561beed96a3">label_pin</a> = Label(<a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a>, textvariable=self.message_pin)</td></tr>
+<tr class="separator:ae9983647982861be32c03561beed96a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72699c1a8764634d7e25710e15035e12" id="r_a72699c1a8764634d7e25710e15035e12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72699c1a8764634d7e25710e15035e12">pin_var</a> = StringVar()</td></tr>
 <tr class="separator:a72699c1a8764634d7e25710e15035e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -156,19 +160,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Initialize the RSA Key Generator app.
-
 This class sets up a simple Tkinter GUI to collect a 4-digit PIN and a file path to save a generated RSA private key.
 
 Parameters:
     root (Tk): The root Tkinter window.
 
 Attributes:
-    pin (str): 4-digit PIN entered by the user.
-    file_path (str or None): Path to save the generated private key.
-    root (Tk): The root Tkinter window.
-    message(StringVar): Stores the status or instruction message.
-    label(Label): Displays messages to the user.
+    root (Tk): The root Tkinter window.    
+    message_key(StringVar): Stores the status or instruction message for key / key path.
+    label_key(Label): Displays messages to the user.
+    message_pin(StringVar): Stores the status or instruction message for pin.
+    label_pin(Label): Displays messages to the user.
+
     pin_var (StringVar): Tkinter variable linked to the PIN entry widget.
+    pin (str): 4-digit PIN entered by the user.
+    file_path (str or None): Path to save the generated private key.               
 </pre> 
 </div>
 </div>
@@ -240,7 +246,7 @@ Side Effects:
 
 Validates that:
     - The PIN is not empty.
-    - The PIN is at least 4 characters long.
+    - The PIN has 4 characters.
     - A file path has been selected.
 
 If all checks pass, it calls `create_keys()` to generate RSA keys.
@@ -267,28 +273,56 @@ Side Effects:
 
 </div>
 </div>
-<a id="af824b5eac4c37da87adf0e097cd806ea" name="af824b5eac4c37da87adf0e097cd806ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af824b5eac4c37da87adf0e097cd806ea">&#9670;&#160;</a></span>label</h2>
+<a id="a17e3eb0c25f44af2fd15c1c0b0719438" name="a17e3eb0c25f44af2fd15c1c0b0719438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17e3eb0c25f44af2fd15c1c0b0719438">&#9670;&#160;</a></span>label_key</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auxiliary_app.AuxiliaryApp.label = Label(<a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a>, textvariable=self.message)</td>
+          <td class="memname">auxiliary_app.AuxiliaryApp.label_key = Label(<a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a>, textvariable=self.message_key)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a4ab19a605935189bd4211792d8f8c94d" name="a4ab19a605935189bd4211792d8f8c94d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ab19a605935189bd4211792d8f8c94d">&#9670;&#160;</a></span>message</h2>
+<a id="ae9983647982861be32c03561beed96a3" name="ae9983647982861be32c03561beed96a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9983647982861be32c03561beed96a3">&#9670;&#160;</a></span>label_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auxiliary_app.AuxiliaryApp.message = StringVar()</td>
+          <td class="memname">auxiliary_app.AuxiliaryApp.label_pin = Label(<a class="el" href="#a66da11c5c4dda7a78213c6503d91c7be">root</a>, textvariable=self.message_pin)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a046118f90173ad306b2157ecc09891d8" name="a046118f90173ad306b2157ecc09891d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046118f90173ad306b2157ecc09891d8">&#9670;&#160;</a></span>message_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auxiliary_app.AuxiliaryApp.message_key = StringVar()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8295e2c94c8ad2efaab3c7aecb438780" name="a8295e2c94c8ad2efaab3c7aecb438780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8295e2c94c8ad2efaab3c7aecb438780">&#9670;&#160;</a></span>message_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auxiliary_app.AuxiliaryApp.message_pin = StringVar()</td>
         </tr>
       </table>
 </div><div class="memdoc">

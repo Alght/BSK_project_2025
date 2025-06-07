@@ -4,6 +4,6 @@ var annotated_dup =
       [ "AuxiliaryApp", "classauxiliary__app_1_1_auxiliary_app.html", "classauxiliary__app_1_1_auxiliary_app" ]
     ] ],
     [ "main_app", "namespacemain__app.html", [
-      [ "encryption_app", "classmain__app_1_1encryption__app.html", "classmain__app_1_1encryption__app" ]
+      [ "EncryptionApp", "classmain__app_1_1_encryption_app.html", "classmain__app_1_1_encryption_app" ]
     ] ]
 ];

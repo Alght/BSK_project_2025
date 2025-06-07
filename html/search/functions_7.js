@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monitor_5fusb_0',['monitor_usb',['../classmain__app_1_1encryption__app.html#af60f960282fe897d5483c86121eb0db2',1,'main_app::encryption_app']]]
+  ['monitor_5fusb_0',['monitor_usb',['../classmain__app_1_1_encryption_app.html#a3f9dd9ffcae49cc2449a6a52158d1830',1,'main_app::EncryptionApp']]]
 ];
