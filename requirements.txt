@@ -7,3 +7,4 @@ psutil
 threading
 Crypto
 tkinter
+hashlib
