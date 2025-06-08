@@ -22,7 +22,7 @@ class EncryptionApp:
         - Choosing a public key file for signature verification.
         - Automatically detecting USB drives to retrieve keys.
 
-        Parameters:
+        Args:
             root (Tk): The root Tkinter window.
 
         Attributes:
@@ -129,13 +129,16 @@ class EncryptionApp:
         """
         Continuously monitor USB drives for new insertions.
 
-        This method runs in a background thread and periodically (every 2 seconds) checks
-        the currently mounted USB drives by calling `get_usb_drives()`.
+        This method runs in a background thread and checks
+        the currently mounted USB drives by calling `get_usb_drives()` every 2 seconds.
 
         When a new USB drive is detected, it schedules a call to `on_usb_inserted` on the main
         Tkinter thread using `root.after` to safely handle UI updates.
 
-        This loop runs indefinitely as a daemon thread.
+        Runs indefinitely as a daemon thread.
+
+        Returns:
+            None           
         """
         while True:
             time.sleep(2)
@@ -152,16 +155,14 @@ class EncryptionApp:
         """
         Continuously monitor USB drives for new insertions.
 
-        Parameters:
-            drive_path (string): path to detectedd USB.
+        Args:
+            drive_path (str): path to detectedd USB.
 
-        This method runs in a background thread and periodically (every 2 seconds) checks
-        the currently mounted USB drives by calling `get_usb_drives()`.
+        This method calls 'find_pem_files()' to check if there are any .pem files on inserted USB drive and logs the operatin.
+        If there is a .pem file its path is saved to self.private_key_path.
 
-        When a new USB drive is detected, it schedules a call to `on_usb_inserted` on the main
-        Tkinter thread using `root.after` to safely handle UI updates.
-
-        This loop runs indefinitely as a daemon thread.
+        Returns:
+            None           
         """
         logging.debug("Pendrive detected")
         pem_files = self.find_pem_files(drive_path)
@@ -172,21 +173,21 @@ class EncryptionApp:
             logging.debug("No key detected on pendrive")
             return
         
-
         self.private_key_path = pem_files[0]
         self.message_private_key.set(f"Private key selected: {os.path.basename(self.private_key_path)}, submit PIN")
 
     def find_pem_files(self, directory):
         """
-        Continuously monitor USB drives for new insertions.
-
-        Parameters:
-            directory (string): path to directory with private key.
-            
         Checks all files in given directory and returns ones with .pem extension.
 
+        Args:
+            directory (str): path to directory with private key.
+        
         Returns:
             list: A list of files with .pem extension.
+
+        Returns:
+            None   
         """
         pem_files = []
         for root, _, files in os.walk(directory):
@@ -206,6 +207,9 @@ class EncryptionApp:
         - Logs pin length and key.
         - Appropriate message_pdf is shown.
         - PIN input is cleared.
+
+        Returns:
+            None               
         """        
         pin = self.pin_var.get().strip()
         if not pin:
@@ -238,6 +242,9 @@ class EncryptionApp:
         Side Effects:
         - Private key is decrypted and loaded into memory.
         - Logs encryption status.
+
+        Returns:
+            None               
         """         
         logging.debug("load_and_decrypt_private_key")
         
@@ -261,7 +268,10 @@ class EncryptionApp:
 
         Side Effects:
         - PDF file path is saved.
-        Logs debug information.
+        - Logs debug information.
+
+        Returns:
+            None               
         """                  
         logging.debug("choose_pdf")
         file_path = filedialog.askopenfilename(
@@ -283,6 +293,9 @@ class EncryptionApp:
         Side Effects:
         - Public key is loaded into memory.
         - Logs debug messages about the operation.
+
+        Returns:
+            None               
         """           
         logging.debug("choose_pub_key")
         file_path = filedialog.askopenfilename(
@@ -300,12 +313,15 @@ class EncryptionApp:
         """
         Open a file dialog to choose public key. Key format is checked and if it is supported key is loaded into memory, otherwise it is set to None.
 
-        Parameters:
+        Args:
             file_path (str): Path to public key.
 
         Side Effects:
         - Public key is loaded into memory.
         - Logs debug messages about the operation.
+
+        Returns:
+            None       
         """           
         logging.debug(f"prepare_public_key")
         try:
@@ -327,6 +343,9 @@ class EncryptionApp:
         - PDF is signed.
         - Logs debug messages about the operation.
         - Shows approriate messages.
+
+        Returns:
+            None               
         """   
         msg = ""
 
@@ -356,6 +375,9 @@ class EncryptionApp:
         - PDF is verified.
         - Logs debug messages about the operation.
         - Shows approriate messages.
+
+        Returns:
+            None           
         """     
 
         msg = ""

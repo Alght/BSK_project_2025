@@ -11,7 +11,7 @@ class AuxiliaryApp:
         Initialize the RSA Key Generator app.
         This class sets up a simple Tkinter GUI to collect a 4-digit PIN and a file path to save a generated RSA private key.
         
-        Parameters:
+        Args:
             root (Tk): The root Tkinter window.
 
         Attributes:
@@ -43,7 +43,6 @@ class AuxiliaryApp:
         sub_btn = Button(root, text="Submit", command=self.submit)
 
         # GUI setup
-        
         pin_entry.grid(row=2, column=2)
         browse_button.grid(row=3, column=2)
         sub_btn.grid(row=5, column=2)
@@ -66,6 +65,9 @@ class AuxiliaryApp:
         Side Effects:
             - Updates `self.pin`, `self.message`, and `self.file_path`.
             - Clears the PIN entry field after key creation.
+
+        Returns:
+            None               
         """
         self.message_pin.set("")
 
@@ -109,6 +111,8 @@ class AuxiliaryApp:
             - Updates the status message shown in the GUI via `self.message`.
             - Logs debug messages about key creation.
 
+        Returns:
+            None   
         """
         logging.debug("Creating keys...")
         self.message_key.set("Creating keys...")

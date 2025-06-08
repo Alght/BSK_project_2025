@@ -45,7 +45,7 @@ def derive_aes_key(pin):
     """
     Derive a 256-bit SHA key.
 
-    Parameters:
+    Args:
         pin (str): User-provided pin.
 
     Returns:
@@ -58,7 +58,7 @@ def encrypt_private_key(private_key, aes_key):
     """
     Encrypt private RSA key using AES key.
 
-    Parameters:
+    Args:
         private_key (rsa.RSAPrivateKey): The RSA private key object to encrypt.
         aes_key (bytes): AES bytes.
 
@@ -81,13 +81,12 @@ def decrypt_private_key(encrypted_data, aes_key):
     """
     Decrypt private RSA key using AES key.
 
-    Parameters:
+    Args:
         encrypted_data (bytes): byte string consisting of a 16-byte iv and AES-encrypted RSA key
         aes_key (bytes): The AES key (32 bytes) used for decryption.
 
     Returns:
         rsa.RSAPrivateKey: RSA private key object.
-
     """
     try:
         iv = encrypted_data[:16]
@@ -105,15 +104,14 @@ def decrypt_private_key(encrypted_data, aes_key):
         return private_key
 
     except (ValueError, UnsupportedAlgorithm, TypeError) as e:
-        # Log or handle decryption error as needed
         logging.error(f"Failed to decrypt private key: {e}", exc_info=True)
         return None
 
 def create_keys(pin, file_path):
     """
     Generate RSA key pair, derive AES key from PIN, encrypt the private key, and save both keys to files.
-
-    Parameters:
+    
+    Args:
         pin (str): User-provided PIN used to derive the AES key.
         file_path (str): Path where the encrypted private key will be saved (PEM format).
 
@@ -145,7 +143,7 @@ def save_public_key(public_key, output_file):
     """
     Save an RSA public key to a PEM-formatted file.
 
-    Parameters:
+    Args:
         public_key (rsa.RSAPublicKey): The RSA public key to save.
         output_file (str): Path to the output file.
 
@@ -168,7 +166,7 @@ def save_encrypted_private_key(encrypted_private_key, output_file):
     """
     Save an AES-encrypted RSA private key to a binary file.
 
-    Parameters:
+    Args:
         encrypted_private_key (bytes): Encrypted private key data.
         output_file (str): Path to the output file.
 
@@ -188,7 +186,7 @@ def prepare_public_key(file_path):
     """
     Reads public key from .pem file and returns it in DER encoding
 
-    Parameters:
+    Args:
         file_path (str): Path to the PEM-formatted public key file.
 
     Returns:
@@ -213,7 +211,7 @@ def load_and_decrypt_private_key(file_path, pin):
     """
     Reads encrypted private key from .pem file and returns it in DER encoding
 
-    Parameters:
+    Args:
         file_path (str): Path to the PEM-formatted public key file.
 
     Returns:
@@ -240,7 +238,7 @@ def verify_pdf(pdf_file_path, public_key):
     """
     Verify the digital signature of a signed PDF against a provided public key.
 
-    Parameters:
+    Args:
         pdf_file_path (str): Path to the signed PDF file.
         public_key (Crypto.PublicKey.RSA.RsaKey): RSA public key to compare with the signer's certificate.
 
@@ -275,8 +273,6 @@ def verify_pdf(pdf_file_path, public_key):
                     logging.debug("Signature failed cryptographic validation.")
                     return False
 
-
-
             # get key from certificate
             signer_cert = embedded_sig.signer_cert
             document_key = signer_cert.public_key
@@ -305,7 +301,7 @@ def create_cert(private_key, save=False):
     """
     Generate a self-signed X.509 certificate using the provided RSA private key.
 
-    Parameters:
+    Args:
         private_key (rsa.RSAPrivateKey): The private key to sign the certificate.
         save (bool): If True, saves the certificate to a file named 'rsa_cert.pem'.
 
@@ -367,7 +363,7 @@ def sign_pdf(pdf_file_path, cert, key, change_name=False):
     """
     Digitally sign a PDF using an X.509 certificate and RSA private key.
 
-    Parameters:
+    Args:
         pdf_file_path (str): Path to the PDF file to be signed.
         cert (x509.Certificate): The X.509 certificate used for signing.
         key (rsa.RSAPrivateKey): The RSA private key corresponding to the certificate.
@@ -438,7 +434,7 @@ def verify_is_pdf_signed(pdf_file_path):
     """
     Check if chosen PDF is signed.
 
-    Parameters:
+    Args:
         pdf_file_path (str): Path to the signed PDF file.
 
     Returns:
@@ -461,12 +457,13 @@ def sign_pdf_full(pdf_file_path, key):
     This function generates a self-signed certificate from the given RSA private key
     and uses it to apply a digital signature to the specified PDF file.
 
-    Parameters:
+    Args:
         pdf_file_path (str): Path to the PDF file to be signed.
         key (rsa.RSAPrivateKey): The RSA private key used for signing.
 
     Side Effects:
         - Modifies the PDF file at `pdf_file_path` by adding a digital signature.
+        - Logs errors with PDF
     """
     if not isinstance(pdf_file_path, str):
         logging.error("pdf_file_path must be a string.")
