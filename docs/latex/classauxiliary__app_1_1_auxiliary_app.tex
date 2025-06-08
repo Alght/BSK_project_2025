@@ -1,0 +1,213 @@
+\doxysection{auxiliary\+\_\+app.\+Auxiliary\+App Class Reference}
+\hypertarget{classauxiliary__app_1_1_auxiliary_app}{}\label{classauxiliary__app_1_1_auxiliary_app}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a3914f0a9d279e663c8c2fa696b76f346}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}})
+\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a46d903fb94da26a868cf079e91a0a6b5}{submit}} (self)
+\begin{DoxyCompactList}\small\item\em Handle the submission of the PIN and key file location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_abdd612b1e625d67cb355374e73dc6b12}{create\+\_\+keys}} (self)
+\begin{DoxyCompactList}\small\item\em Create RSA keys using the provided PIN and file path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a6211edc036d64b39524e876ffaedad17}{choose\+\_\+location}} (self)
+\begin{DoxyCompactList}\small\item\em A file save dialog is shown for the user to select a {\ttfamily .pem} file location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a79db7f89fb79fd4828b443a5f9e60017}{pin}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em 4-\/digit PIN entered by the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a80d0920840f6b2865a5ccce50631e543}{file\+\_\+path}} = None
+\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}} = root
+\begin{DoxyCompactList}\small\item\em Initialize the RSA Key Generator app. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a046118f90173ad306b2157ecc09891d8}{message\+\_\+key}} = String\+Var()
+\begin{DoxyCompactList}\small\item\em Stores the status or instruction message for key / key path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a17e3eb0c25f44af2fd15c1c0b0719438}{label\+\_\+key}} = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Displays messages to the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a8295e2c94c8ad2efaab3c7aecb438780}{message\+\_\+pin}} = String\+Var()
+\begin{DoxyCompactList}\small\item\em Stores the status or instruction message for pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_ae9983647982861be32c03561beed96a3}{label\+\_\+pin}} = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Displays messages to the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a72699c1a8764634d7e25710e15035e12}{pin\+\_\+var}} = String\+Var()
+\begin{DoxyCompactList}\small\item\em Tkinter variable linked to the PIN entry widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a3914f0a9d279e663c8c2fa696b76f346}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a3914f0a9d279e663c8c2fa696b76f346} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{root}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a6211edc036d64b39524e876ffaedad17}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!choose\_location@{choose\_location}}
+\index{choose\_location@{choose\_location}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{choose\_location()}{choose\_location()}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a6211edc036d64b39524e876ffaedad17} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+choose\+\_\+location (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+A file save dialog is shown for the user to select a {\ttfamily .pem} file location. 
+
+\begin{DoxyParagraph}{Side Effects}
+
+\begin{DoxyItemize}
+\item Updates {\ttfamily self.\+file\+\_\+path} with the selected or provided path.
+\item Logs debug messages about file selection. 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_abdd612b1e625d67cb355374e73dc6b12}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!create\_keys@{create\_keys}}
+\index{create\_keys@{create\_keys}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{create\_keys()}{create\_keys()}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_abdd612b1e625d67cb355374e73dc6b12} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+create\+\_\+keys (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Create RSA keys using the provided PIN and file path. 
+
+\begin{DoxyVerb}   This method delegates key generation to the `functionality.create_keys()`
+   function, passing the  PIN and selected file path and
+   updates the GUI message before and after key creation.
+\end{DoxyVerb}
+
+
+\begin{DoxyParagraph}{Side Effects}
+
+\begin{DoxyItemize}
+\item Calls {\ttfamily \doxylink{namespacefunctionality_ae6531eefcaa9bb444d53f751e90ee51e}{functionality.\+create\+\_\+keys}(self.\+pin, self.\+file\+\_\+path)} to generate keys.
+\item Updates the status message shown in the GUI via {\ttfamily self.\+message}.
+\item Logs debug messages about key creation.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+
+
+None 
+\end{DoxyReturn}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a46d903fb94da26a868cf079e91a0a6b5}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!submit@{submit}}
+\index{submit@{submit}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a46d903fb94da26a868cf079e91a0a6b5} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+submit (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Handle the submission of the PIN and key file location. 
+
+\begin{DoxyVerb}   Validates that:
+       - The PIN is not empty.
+       - The PIN has 4 characters.
+       - A file path has been selected.
+
+   If all checks pass, it calls `create_keys()` to generate RSA keys.
+   Otherwise, displays appropriate messages to the user.
+\end{DoxyVerb}
+
+
+\begin{DoxyParagraph}{Side Effects}
+
+\begin{DoxyItemize}
+\item Updates {\ttfamily self.\+pin}, {\ttfamily self.\+message}, and {\ttfamily self.\+file\+\_\+path}.
+\item Clears the PIN entry field after key creation.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+
+
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a80d0920840f6b2865a5ccce50631e543}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!file\_path@{file\_path}}
+\index{file\_path@{file\_path}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{file\_path}{file\_path}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a80d0920840f6b2865a5ccce50631e543} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+file\+\_\+path = None}
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a17e3eb0c25f44af2fd15c1c0b0719438}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!label\_key@{label\_key}}
+\index{label\_key@{label\_key}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{label\_key}{label\_key}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a17e3eb0c25f44af2fd15c1c0b0719438} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+label\+\_\+key = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+key)}
+
+
+
+Displays messages to the user. 
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_ae9983647982861be32c03561beed96a3}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!label\_pin@{label\_pin}}
+\index{label\_pin@{label\_pin}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{label\_pin}{label\_pin}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_ae9983647982861be32c03561beed96a3} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+label\+\_\+pin = Label(\mbox{\hyperlink{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}{root}}, textvariable=self.\+message\+\_\+pin)}
+
+
+
+Displays messages to the user. 
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a046118f90173ad306b2157ecc09891d8}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!message\_key@{message\_key}}
+\index{message\_key@{message\_key}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{message\_key}{message\_key}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a046118f90173ad306b2157ecc09891d8} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+message\+\_\+key = String\+Var()}
+
+
+
+Stores the status or instruction message for key / key path. 
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a8295e2c94c8ad2efaab3c7aecb438780}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!message\_pin@{message\_pin}}
+\index{message\_pin@{message\_pin}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{message\_pin}{message\_pin}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a8295e2c94c8ad2efaab3c7aecb438780} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+message\+\_\+pin = String\+Var()}
+
+
+
+Stores the status or instruction message for pin. 
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a79db7f89fb79fd4828b443a5f9e60017}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!pin@{pin}}
+\index{pin@{pin}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{pin}{pin}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a79db7f89fb79fd4828b443a5f9e60017} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+pin = "{}"{}}
+
+
+
+4-\/digit PIN entered by the user. 
+
+file\+\_\+path (str or None)\+: Path to save the generated private key. \Hypertarget{classauxiliary__app_1_1_auxiliary_app_a72699c1a8764634d7e25710e15035e12}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!pin\_var@{pin\_var}}
+\index{pin\_var@{pin\_var}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{pin\_var}{pin\_var}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a72699c1a8764634d7e25710e15035e12} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+pin\+\_\+var = String\+Var()}
+
+
+
+Tkinter variable linked to the PIN entry widget. 
+
+\Hypertarget{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be}\index{auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}!root@{root}}
+\index{root@{root}!auxiliary\_app.AuxiliaryApp@{auxiliary\_app.AuxiliaryApp}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \label{classauxiliary__app_1_1_auxiliary_app_a66da11c5c4dda7a78213c6503d91c7be} 
+auxiliary\+\_\+app.\+Auxiliary\+App.\+root = root}
+
+
+
+Initialize the RSA Key Generator app. 
+
+This class sets up a simple Tkinter GUI to collect a 4-\/digit PIN and a file path to save a generated RSA private key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & The root Tkinter window.\\
+\hline
+\end{DoxyParams}
+The root Tkinter window. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{auxiliary__app_8py}{auxiliary\+\_\+app.\+py}}\end{DoxyCompactItemize}
