@@ -3,7 +3,6 @@ from Crypto.Cipher import AES
 import os
 import logging
 from cryptography.hazmat.primitives.asymmetric import rsa
-from pyhanko.sign import signers
 from pyhanko.pdf_utils.incremental_writer import IncrementalPdfFileWriter
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.backends import default_backend
@@ -19,10 +18,11 @@ from pyhanko.sign.validation import validate_pdf_signature
 from pyhanko.sign import fields, signers
 from pyhanko import stamp
 from pyhanko.pdf_utils.incremental_writer import IncrementalPdfFileWriter
-from pyhanko.sign import fields, signers
 from hashlib import sha256
 import io
 from cryptography.exceptions import UnsupportedAlgorithm
+from pyhanko.sign.diff_analysis.policy_api import SuspiciousModification
+from pyhanko.sign.diff_analysis.policy_api import ModificationLevel
 
 logging.basicConfig(level=logging.INFO)
 
@@ -272,6 +272,11 @@ def verify_pdf(pdf_file_path, public_key):
             except Exception as e:
                     logging.debug("Signature failed cryptographic validation.")
                     return False
+
+            if validation_result.modification_level != ModificationLevel.NONE:
+                raise SuspiciousModification(
+                    f"Suspicious modifications found: {validation_result.modification_level.name}"
+            )
 
             # get key from certificate
             signer_cert = embedded_sig.signer_cert
